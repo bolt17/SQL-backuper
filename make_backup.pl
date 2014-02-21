@@ -5,7 +5,7 @@ $date= strftime "%w", localtime(time);
 
 $back_dir="/var/backups";
 
-@db=`/usr/bin/mysql -u root --password="erjnvkbs337" -N -e "show databases"`;
+@db=`/usr/bin/mysql -u root --password="YOUR PASSWORD" -N -e "show databases"`;
 foreach $db (@db) {
     chomp $db;
     system("/usr/bin/mysqldump --add-drop-table -u root --password=ROOT-PASSWORD $db > $back_dir/$db.$date.sql");
